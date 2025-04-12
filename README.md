@@ -1,2 +1,11 @@
-# osctip
-Open source platform that aggregates, correlates, and visualizes cybersecurity threat intelligence from a variety of free APIs and open source feeds. The platform will serve security researchers, SOC teams, and small to medium organizations by providing actionable insights on emerging risks and vulnerabilities.
+# Open Source Cybersecurity Threat Intelligence Platform
+
+## What technologies are used for this project?
+
+This project is built with:
+
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
