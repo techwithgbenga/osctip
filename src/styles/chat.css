@@ -1,0 +1,161 @@
+
+/* Terminal cursor effect */
+.terminal-cursor:after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 16px;
+  background-color: currentColor;
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+  vertical-align: text-bottom;
+  opacity: 0.7;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* Typing animation */
+.typing-dot {
+  opacity: 0;
+  animation: typingAnimation 1.5s infinite;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typingAnimation {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Chat scrollbar */
+.chat-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.chat-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.chat-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Security badge pulse */
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+.security-pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Terminal style text animation */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+.terminal-typing {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid;
+  width: 0;
+  animation: 
+    typing 3.5s steps(40, end) forwards,
+    blink 1s step-end infinite;
+}
+
+/* Glitch effect for cybersecurity theme */
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.text-glitch {
+  position: relative;
+  animation: glitch 500ms infinite;
+  animation-play-state: paused;
+}
+
+.text-glitch:hover {
+  animation-play-state: running;
+}
+
+/* Scanline effect for terminal display */
+.terminal-scanline {
+  position: relative;
+  overflow: hidden;
+}
+
+.terminal-scanline::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: rgba(122, 195, 108, 0.1);
+  animation: scanline 6s linear infinite;
+}
+
+@keyframes scanline {
+  0% {
+    top: 0%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+/* Matrix rain effect (subtle background for terminals) */
+.matrix-bg {
+  position: relative;
+  background-color: rgba(0, 20, 0, 0.05);
+  overflow: hidden;
+}
+
+.matrix-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(26, 32, 26, 0.1) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  pointer-events: none;
+}

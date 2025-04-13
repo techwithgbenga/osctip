@@ -62,19 +62,50 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				},
-				// Cybersecurity theme colors
-				cyber: {
-					background: '#020c1b',
-					foreground: '#e6f1ff',
-					primary: '#0a192f',
-					secondary: '#64ffda',
-					accent: '#00b4d8',
-					alert: '#dc2626',
-					success: '#10b981',
-					warning: '#f59e0b',
-					info: '#3b82f6'
 				}
+			},
+			fontFamily: {
+				sans: ['Inter', 'sans-serif'],
+			},
+			typography: {
+				DEFAULT: {
+					css: {
+						maxWidth: '100%',
+						color: 'hsl(var(--foreground))',
+						a: {
+							color: 'hsl(var(--primary))',
+							textDecoration: 'underline',
+							'&:hover': {
+								color: 'hsl(var(--primary))',
+							},
+						},
+						code: {
+							color: 'hsl(var(--primary))',
+							backgroundColor: 'hsl(var(--muted))',
+							borderRadius: '0.25rem',
+							paddingLeft: '0.25rem',
+							paddingRight: '0.25rem',
+						},
+						'code::before': {
+							content: '""',
+						},
+						'code::after': {
+							content: '""',
+						},
+						blockquote: {
+							borderLeftColor: 'hsl(var(--border))',
+						},
+						'h1,h2,h3,h4,h5,h6': {
+							color: 'hsl(var(--foreground))',
+						},
+						hr: {
+							borderColor: 'hsl(var(--border))',
+						},
+						strong: {
+							color: 'hsl(var(--foreground))',
+						},
+					},
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -98,37 +129,27 @@ export default {
 						height: '0'
 					}
 				},
-				'pulse-glow': {
-					'0%, 100%': {
-						opacity: '1',
-						filter: 'brightness(100%)'
-					},
-					'50%': {
-						opacity: '0.8',
-						filter: 'brightness(150%)'
-					}
+				'pulse-slow': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.5' }
 				},
-				'data-flow': {
-					'0%': {
-						transform: 'translateX(0) translateY(0)',
-						opacity: '0'
-					},
-					'50%': {
-						opacity: '1'
-					},
-					'100%': {
-						transform: 'translateX(100%) translateY(100%)',
-						opacity: '0'
-					}
-				}
+				'fade-in': {
+					from: { opacity: '0', transform: 'translateY(10px)' },
+					to: { opacity: '1', transform: 'translateY(0)' },
+				},
+				'slide-in': {
+					from: { transform: 'translateX(-100%)' },
+					to: { transform: 'translateX(0)' },
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
-				'data-flow': 'data-flow 8s linear infinite'
+				'pulse-slow': 'pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+				'fade-in': 'fade-in 0.3s ease-out',
+				'slide-in': 'slide-in 0.3s ease-out',
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 } satisfies Config;
