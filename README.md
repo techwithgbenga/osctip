@@ -112,7 +112,7 @@ This platform aims to bridge the gap between open data and practical insights th
 │ Dashboard & Reporting UI     │ ← React, D3.js, Kibana, PDF Export
 └──────────────────────────────┘
 
-
+```
 ---
 
 ## 🌟 Future Roadmap
