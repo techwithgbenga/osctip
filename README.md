@@ -115,7 +115,7 @@ This platform aims to bridge the gap between open data and practical insights th
 ```
 ---
 ## 🧱 Project Structure
-
+```plaintext
 OSCTIP/
 ├── backend/              # FastAPI backend
 │   ├── app/
@@ -145,7 +145,7 @@ OSCTIP/
 │   └── README.md
 ├── docker-compose.yml
 └── README.md
-
+```
 ---
 ...
 
