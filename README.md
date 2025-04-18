@@ -114,6 +114,40 @@ This platform aims to bridge the gap between open data and practical insights th
 
 ```
 ---
+## 🧱 Project Structure
+
+OSCTIP/
+├── backend/              # FastAPI backend
+│   ├── app/
+│   │   ├── __init__.py
+│   │   ├── main.py
+│   │   ├── config.py
+│   │   ├── models/
+│   │   ├── schemas/
+│   │   ├── connectors/
+│   │   ├── normalizer/
+│   │   ├── enrichment/
+│   │   ├── correlation/
+│   │   ├── routers/
+│   │   ├── utils/
+│   │   └── jobs/
+│   ├── requirements.txt
+│   ├── .env
+│   └── README.md
+├── frontend/             # Next.js frontend
+│   ├── app/
+│   ├── components/
+│   ├── public/
+│   ├── styles/
+│   ├── package.json
+│   ├── tsconfig.json
+│   ├── next.config.js
+│   └── README.md
+├── docker-compose.yml
+└── README.md
+
+---
+...
 
 ## 🌟 Future Roadmap
 - 🔄 Dark Web & Pastebin Monitoring Integration
@@ -146,14 +180,31 @@ We welcome contributions of all kinds – developers, data scientists, threat re
 # Fork the repo
 git clone https://github.com/techwithgbenga/osctip.git
 
-# Install dependencies
 cd osctip
+
+# Backend Setup (FastAPI)
+cd backend
+python -m venv venv
+source venv/bin/activate  # or venv\Scripts\activate on Windows
 pip install -r requirements.txt
 
-# Run the dev server
+# Set environment variables (edit `.env` as needed)
+cp .env.example .env
+
+# Run backend
 uvicorn app.main:app --reload
 
+#  Frontend Setup (Next.js)
+cd frontend
+npm install
+npm run dev
+
+
+# Run project
+docker-compose up --build
+
 ```
+
 See CONTRIBUTING.md for guidelines and best practices.
 
 ---

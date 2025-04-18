@@ -1,0 +1,9 @@
+fastapi[all]
+uvicorn              # ASGI server for FastAPI
+motor                # Async MongoDB driver
+neo4j-driver         # Official Neo4j Python driver
+httpx                # Async HTTP client
+apscheduler          # Job scheduling
+python-dotenv        # .env file loader
+pydantic             # Data validation
+stix2                # STIX object modeling
